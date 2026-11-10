@@ -7,13 +7,13 @@ import AuthShowcase from "./AuthShowcase.jsx";
 import "./auth.css";
 
 const DEMO_ACCOUNTS = [
-  { role: "admin", label: "Admin", email: "admin@company.com", password: "Admin@12345", icon: "👑" },
-  { role: "hr", label: "HR", email: "hr@company.com", password: "HR@12345", icon: "💼" },
-  { role: "hiring_manager", label: "Hiring Manager", email: "manager@company.com", password: "Manager@123", icon: "👔" },
-  { role: "interviewer", label: "Interviewer", email: "interviewer@company.com", password: "Interviewer@123", icon: "📋" },
-  { role: "employee", label: "Employee", email: "employee@company.com", password: "Employee@123", icon: "👤" },
-  { role: "intern", label: "Intern", email: "intern@company.com", password: "Intern@123", icon: "🎓" },
-  { role: "candidate", label: "Candidate", email: "candidate@company.com", password: "Candidate@123", icon: "📄" },
+  { role: "admin", label: "Admin", name: "System Admin", email: "admin@company.com", password: "Admin@12345", icon: "👑" },
+  { role: "hr", label: "HR", name: "HR Operations", email: "hr@company.com", password: "HR@12345", icon: "💼" },
+  { role: "hiring_manager", label: "Hiring Manager", name: "Alex Rivera", email: "manager@company.com", password: "Manager@123", icon: "👔" },
+  { role: "interviewer", label: "Interviewer", name: "Sarah Chen", email: "interviewer@company.com", password: "Interviewer@123", icon: "📋" },
+  { role: "employee", label: "Employee", name: "David Miller", email: "employee@company.com", password: "Employee@123", icon: "👤" },
+  { role: "intern", label: "Intern", name: "Emily Watson", email: "intern@company.com", password: "Intern@123", icon: "🎓" },
+  { role: "candidate", label: "Candidate", name: "John Doe", email: "candidate@company.com", password: "Candidate@123", icon: "📄" },
 ];
 
 export default function Login() {
@@ -200,7 +200,7 @@ export default function Login() {
             <span>Quick 1-Click Login</span>
           </div>
           <p style={{ fontSize: "11.5px", color: "#64748b", margin: "4px 0 10px 0" }}>
-            Click any role to auto-sign in immediately:
+            Click any seeded demo account to auto-sign in immediately:
           </p>
           <div className="auth-demo-pills">
             {DEMO_ACCOUNTS.map((acc) => (
@@ -210,9 +210,9 @@ export default function Login() {
                 className="auth-demo-pill"
                 disabled={loading}
                 onClick={() => handleQuickLogin(acc)}
-                title={`Quick login as ${acc.label} (${acc.email})`}
+                title={`Quick login as ${acc.name} (${acc.email}) • Password: ${acc.password}`}
               >
-                <span>{acc.icon}</span> <span>{acc.label}</span>
+                <span>{acc.icon}</span> <span>{acc.label}</span> <span className="auth-demo-pill-name">({acc.name})</span>
               </button>
             ))}
           </div>

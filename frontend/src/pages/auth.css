@@ -263,6 +263,16 @@
   color: #1d4ed8;
 }
 
+.auth-demo-pill-name {
+  color: #64748b;
+  font-weight: 400;
+  font-size: 11px;
+}
+
+.auth-demo-pill:hover .auth-demo-pill-name {
+  color: #1d4ed8;
+}
+
 /* Footer Link */
 .auth-footer {
   text-align: center;
